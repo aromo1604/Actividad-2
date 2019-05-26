@@ -7,20 +7,29 @@ package ende;
 
 public class Juego 
 {
+	private static Jugador p1;
+	private static Jugador p2;
+	private static boolean finDeJuego;
+	private Integer rondasJugadas;
+	private Integer exitosJugador2;
+	private Integer empates;
+	private Integer exitosJugador1;
+	private String opcionJugador1;
+	private String opcionJugador2;
+	
     public static void main(String args[])
     {
-        Jugador p1=new Jugador();
-        Jugador p2=new Jugador();
-        boolean fin_de_juego=false;  
+        p1 = new Jugador();
+        p2 = new Jugador();
+        finDeJuego = false;  
         Integer Rondasjugadas = 0;    // Número de rondas jugadas
-        Integer EXITOS_jugador1=p1.éxitos;
-        Integer EXITOS_jugador2=p2.éxitos;
+        Integer EXITOS_jugador1 =  p1.éxitos;
+        Integer EXITOS_jugador2 = p2.éxitos;
         Integer EmPaTeS = 0;
         String opcion_JUGADOR1, opcion_JUGADOR2;
         
         // Bucle de juego
-        do
-        {
+        do{
             System.out.println("***** Ronda: " + Rondasjugadas+" *********************\n");
             System.out.println("Numero de empates: "+ EmPaTeS + "\n");
             opcion_JUGADOR1=p1.opcion_al_azar();
