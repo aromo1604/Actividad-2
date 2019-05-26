@@ -5,8 +5,7 @@ package ende;
  */
 
 
-public class Juego 
-{
+public class Juego {
 	private static Jugador p1;
 	private static Jugador p2;
 	private static boolean finDeJuego;
@@ -17,8 +16,7 @@ public class Juego
 	private String opcionJugador1;
 	private String opcionJugador2;
 	
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
         p1 = new Jugador();
         p2 = new Jugador();
         finDeJuego = false;  
@@ -37,45 +35,37 @@ public class Juego
             opcion_JUGADOR2 = p2.opcion_al_azar();
             System.out.println("Jugador 2: " + opcion_JUGADOR2+"\t Jugador 2 - Partidas ganadas: " + EXITOS_jugador2);
             
-            if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("papel")))
-            {
+            if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("papel"))) {
                 System.out.println("Jugador 2 GANA");
                 EXITOS_jugador2 = ++p2.éxitos;
                 
             }
-            else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("piedra")))
-            {
+            else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("piedra"))){
             	EXITOS_jugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
             }
-            else if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("tijeras")))
-            {
+            else if((opcion_JUGADOR1.equals("piedra"))&&(opcion_JUGADOR2.equals("tijeras"))){
             	EXITOS_jugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
             }
-            else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("piedra")))
-            {
+            else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("piedra"))){
             	EXITOS_jugador2 = ++p2.éxitos;
                 System.out.println("Jugador 2 GANA");
             }
-            else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("papel")))
-            {
+            else if((opcion_JUGADOR1.equals("tijeras"))&&(opcion_JUGADOR2.equals("papel"))){
             	EXITOS_jugador1 = ++p1.éxitos;
                 System.out.println("Jugador 1 GANA");
             }
-            else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("tijeras")))
-            {
+            else if((opcion_JUGADOR1.equals("papel"))&&(opcion_JUGADOR2.equals("tijeras"))){
             	EXITOS_jugador2 = ++p2.éxitos;
                 System.out.println("Jugador 2 GANA");
             }
-            if(opcion_JUGADOR1==opcion_JUGADOR2)
-            {
+            if(opcion_JUGADOR1==opcion_JUGADOR2){
             	EmPaTeS++;
                 System.out.println("\n\t\t\t Empate \n");
             }
             Rondasjugadas++;
-            if((p1.éxitos>=3)||(p2.éxitos>=3))
-            {
+            if((p1.éxitos>=3)||(p2.éxitos>=3)) {
             	fin_de_juego=true;
                 System.out.println("FIN DEL JUEGO!!");
             }
@@ -91,8 +81,7 @@ class Jugador{
     /**
      * Escoge piedra, papel o tijera al azar
      */
-    public String opcion_al_azar()
-    {
+    public String opcion_al_azar(){
         String opcion="";
         Integer c = (int)(Math.random()*3);
         switch(c){
@@ -107,12 +96,10 @@ class Jugador{
         }
         return opcion;
     }
-    public void setÉxitos() 
-    {
+    public void setÉxitos() {
         éxitos++;
     }
-    public int getÉxitos() 
-    {
+    public int getÉxitos() {
         return(éxitos);
     }
     
